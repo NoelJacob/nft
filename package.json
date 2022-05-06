@@ -1,0 +1,7 @@
+{
+  "name": "ton-nft",
+  "version": "1.0.0",
+  "dependencies": {
+    "tonweb": "^0.0.38"
+  }
+}
