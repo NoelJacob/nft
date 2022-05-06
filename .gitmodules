@@ -1,0 +1,3 @@
+[submodule "token-contract"]
+	path = token-contract
+	url = https://github.com/NoelJacob/token-contract.git
