@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ton-nft.iml" filepath="$PROJECT_DIR$/ton-nft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../web/web.iml" filepath="$PROJECT_DIR$/../web/web.iml" />
     </modules>
   </component>
 </project>

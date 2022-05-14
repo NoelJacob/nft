@@ -1,0 +1,14 @@
+//
+// dependson "block.tlb"
+//
+
+// tail#_ bn:(#<= 1011) data:(bits bn) = SnakeData ~0;
+// cons#_ c:Bool bn:(#<= 1011) {n:#} data:(bits bn) next:(Maybe (Either SnakeData ~n ^(SnakeData ~n))) = SnakeData ~(n + 1);
+//
+// head#_ {n:#} bn:(#<= n) data:(bits bn) next:(Maybe (bn < n)?SnakeDataCell (1012 - n)) = SnakeDataCell n;
+// _ _:(SnakeDataCell 1012) = SnakeDataStart;
+//
+// addr_tail#_ {n:#} data:(bits 256) = Addr ~n;
+// addr_init#_ {n:#} data:(bits 256) next:Addr ~(n + 1) = Addr ~n;
+
+
