@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@bitarray/typedarray": "^1.0.3",
+    "@black_hole/array-equals": "^1.1.3",
     "arg": "^5.0.1",
     "tonweb": "^0.0.38"
   }

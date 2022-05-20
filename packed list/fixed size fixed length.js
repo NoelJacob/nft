@@ -9,50 +9,53 @@ let addr = [];
 const strSplice = (s, a, b) => [s.slice(a, b), s.slice(0, a) + s.slice(b)];
 
 // read
-let x = cells.shift();
-let bytes, num, xsize = 80;
-[bytes, x] = strSplice(x, 0, 16);
-bytes = parseInt(bytes, 2);
+let x = cells.shift(), size, num, xsize = 80, xnum=0, a, b;
+[size, x] = strSplice(x, 0, 16);
+size = parseInt(size, 2);
 [num, x] = strSplice(x, 0, 64);
 num = parseInt(num, 2);
 
 
-// do {
-//     if ((xsize + size) <= 1023) {
-//         [a, x] = strSplice(x, 0, size);
-//         addr.push(a);
-//         xsize += size;
-//     } else {
-//         [a, x] = strSplice(x, 0, 1023 - xsize);
-//         x = cells.shift();
-//         [c, x] = strSplice(x, 0, size - (1023 - xsize));
-//         [b, a] = strSplice(a + c, 0, 256);
-//         addr.push(b);
-//         next = a;
-//         xsize = 0;
-//     }
-// } while (next === "1");
+do {
+    const s2 = size;
+    while (s2/1024  > 1) {
+        [k, x] = strSplice(x, 0, 1023 - xsize);
+    }
+    if ((xsize + s2) <= 1023) {
+        [a, x] = strSplice(x, 0, s2);
+        addr.push(a);
+        ++ xnum;
+        xsize += s2;
+    } else {
+        [a, x] = strSplice(x, 0, 1023 - xsize);
+        x = cells.shift();
+        [b, x] = strSplice(x, 0, s2 - (1023 - xsize));
+        addr.push(a + b);
+        ++ xnum;
+        xsize = 0;
+    }
+} while (xnum !== num);
 
-// console.log(new Set(addr), addr.length) // 4x Ton donation address
-// const is_same = new Set(addr);
-// console.log(is_same.size === 1);
+console.log(new Set(addr), addr.length) // 4x Ton donation address
+const is_same = new Set(addr);
+console.log(is_same.size === 1);
 
 // write
-cells = [];
-xsize = 0;
-x = "";
-for (let z = 0; z < addr.length; z++) {
-    x += addr[z];
-    if (z !== (addr.length - 1)) x += "1"
-    else x += "0"
-    xsize += 257;
-    if (xsize > 1023) {
-        [a, x] = strSplice(x, 0, 1023);
-        cells.push(a);
-        xsize -= 1023;
-    }
-    if (z === (addr.length - 1)) cells.push(x);
-}
+// cells = [];
+// xsize = 0;
+// x = "";
+// for (let z = 0; z < addr.length; z++) {
+//     x += addr[z];
+//     if (z !== (addr.length - 1)) x += "1"
+//     else x += "0"
+//     xsize += 257;
+//     if (xsize > 1023) {
+//         [a, x] = strSplice(x, 0, 1023);
+//         cells.push(a);
+//         xsize -= 1023;
+//     }
+//     if (z === (addr.length - 1)) cells.push(x);
+// }
 
 // console.log(cells)
 
