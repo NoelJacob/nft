@@ -1,19 +1,27 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@bitarray/typedarray': ^1.0.3
+  '@bitarray/typedarray': ^1.1.0
+  '@black_hole/array-equals': ^1.1.3
   arg: ^5.0.1
+  binary-parser: ^2.0.3
   tonweb: ^0.0.38
 
 dependencies:
-  '@bitarray/typedarray': 1.0.3
+  '@bitarray/typedarray': 1.1.0
+  '@black_hole/array-equals': 1.1.3
   arg: 5.0.1
+  binary-parser: 2.0.3
   tonweb: 0.0.38
 
 packages:
 
-  /@bitarray/typedarray/1.0.3:
-    resolution: {integrity: sha512-yByIXzTcvU2Guvm5bN0K6VJt5/6o0jIbHbiFkAEJ8ha2SpSsVSh2qAPmMSZB/3DLua3wDrW8Eqs4siulbRPOhQ==}
+  /@bitarray/typedarray/1.1.0:
+    resolution: {integrity: sha512-MOgnziAhUw66eRNiUx8oPkT+172pqNMiQz2Gwl6HApUzdbBzw/ORlxCeaR1LoIOWETn6EnQeZrVygmVOK/ARxw==}
+    dev: false
+
+  /@black_hole/array-equals/1.1.3:
+    resolution: {integrity: sha512-tRdzp19rmfbpRApJGMfw2S2+A4FyHvEs36oYQb27WrgkZZH+JYooHpbnOxuHuS3il27On+DbYRngGU5IvFCcug==}
     dev: false
 
   /@ledgerhq/devices/5.51.1:
@@ -93,11 +101,10 @@ packages:
     dev: false
     optional: true
 
-  /@peculiar/asn1-schema/2.1.0:
-    resolution: {integrity: sha512-D6g4C5YRKC/iPujMAOXuZ7YGdaoMx8GsvWzfVSyx2LYeL38ECOKNywlYAuwbqQvON64lgsYdAujWQPX8hhoBLw==}
+  /@peculiar/asn1-schema/2.1.8:
+    resolution: {integrity: sha512-u34H/bpqCdDuqrCVZvH0vpwFBT/dNEdNY+eE8u4IuC26yYnhDkXF4+Hliqca88Avbb7hyN2EF/eokyDdyS7G/A==}
     dependencies:
-      '@types/asn1js': 2.0.2
-      asn1js: 2.4.0
+      asn1js: 3.0.5
       pvtsutils: 1.3.2
       tslib: 2.4.0
     dev: false
@@ -109,19 +116,15 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@peculiar/webcrypto/1.3.3:
-    resolution: {integrity: sha512-+jkp16Hp18HkphJlMtqsQKjyDWJBh0AhDuoB+vVakuIRbkBdaFb7v26Ldm25altjiYhCyQnR5NChHxwSTvbXJw==}
+  /@peculiar/webcrypto/1.4.0:
+    resolution: {integrity: sha512-U58N44b2m3OuTgpmKgf0LPDOmP3bhwNz01vAnj1mBwxBASRhptWYK+M3zG+HBkDqGQM+bFsoIihTW8MdmPXEqg==}
     engines: {node: '>=10.12.0'}
     dependencies:
-      '@peculiar/asn1-schema': 2.1.0
+      '@peculiar/asn1-schema': 2.1.8
       '@peculiar/json-schema': 1.1.12
       pvtsutils: 1.3.2
       tslib: 2.4.0
-      webcrypto-core: 1.7.3
-    dev: false
-
-  /@types/asn1js/2.0.2:
-    resolution: {integrity: sha512-t4YHCgtD+ERvH0FyxvNlYwJ2ezhqw7t+Ygh4urQ7dJER8i185JPv6oIM3ey5YQmGN6Zp9EMbpohkjZi9t3UxwA==}
+      webcrypto-core: 1.7.5
     dev: false
 
   /@unimodules/core/7.1.2:
@@ -159,11 +162,13 @@ packages:
     resolution: {integrity: sha512-usgMoyXjMbx/ZPdzTSXExhMPur2FTdz/Vo5PVx2gIaBcdAAJNOFlsdgqveM8Cff7W0v+xrf9BwjOV26JSAF9qA==}
     dev: false
 
-  /asn1js/2.4.0:
-    resolution: {integrity: sha512-PvZC0FMyMut8aOnR2jAEGSkmRtHIUYPe9amUEnGjr9TdnUmsfoOkjrvUkOEU9mzpYBR1HyO9bF+8U1cLTMMHhQ==}
-    engines: {node: '>=6.0.0'}
+  /asn1js/3.0.5:
+    resolution: {integrity: sha512-FVnvrKJwpt9LP2lAMl8qZswRNm3T4q9CON+bxldk2iwk3FFpuwhx2FfinyitizWHsVYyaY+y5JzDR0rCMV5yTQ==}
+    engines: {node: '>=12.0.0'}
     dependencies:
+      pvtsutils: 1.3.2
       pvutils: 1.1.3
+      tslib: 2.4.0
     dev: false
 
   /at-least-node/1.0.0:
@@ -185,7 +190,7 @@ packages:
     dev: false
 
   /base-64/0.1.0:
-    resolution: {integrity: sha1-eAqZyE59YAJgNhURxId2E78k9rs=}
+    resolution: {integrity: sha512-Y5gU45svrR5tI2Vt/X9GPd3L0HNIKzGu202EjxrXMpuc2V2CiKgemAbUUsqYmZJvPtCXoUKjNZwBJzsNScUbXA==}
     dev: false
 
   /base64-js/1.5.1:
@@ -193,8 +198,13 @@ packages:
     dev: false
     optional: true
 
+  /binary-parser/2.0.3:
+    resolution: {integrity: sha512-ACepwK4uWahyhhSQYErkUFJnDI4qjvZXBuJy397yPLE6KVQiiZ5t+GlUBxHdGrH09H0wXSzSMjWv1I/FqNGBZQ==}
+    engines: {node: '>=12'}
+    dev: false
+
   /bn.js/4.11.6:
-    resolution: {integrity: sha1-UzRK2xRhehP26N0s4okF0cC6MhU=}
+    resolution: {integrity: sha512-XWwnNNFCuuSQ0m3r3C4LE3EiORltHd9M05pq6FOlVeiophzRbMo50Sbz1ehl8K3Z+jw9+vmgnXefY1hz8X+2wA==}
     dev: false
 
   /bn.js/5.1.1:
@@ -378,7 +388,7 @@ packages:
   /isomorphic-webcrypto/2.3.8:
     resolution: {integrity: sha512-XddQSI0WYlSCjxtm1AI8kWQOulf7hAN3k3DclF1sxDJZqOe0pcsOt675zvWW91cZH9hYs3nlA3Ev8QK5i80SxQ==}
     dependencies:
-      '@peculiar/webcrypto': 1.3.3
+      '@peculiar/webcrypto': 1.4.0
       asmcrypto.js: 0.22.0
       b64-lite: 1.4.0
       b64u-lite: 1.1.0
@@ -619,12 +629,12 @@ packages:
     dev: false
     optional: true
 
-  /webcrypto-core/1.7.3:
-    resolution: {integrity: sha512-8TnMtwwC/hQOyvElAOJ26lJKGgcErUG02KnKS1+QhjV4mDvQetVWU1EUEeLF8ICOrdc42+GypocyBJKRqo2kQg==}
+  /webcrypto-core/1.7.5:
+    resolution: {integrity: sha512-gaExY2/3EHQlRNNNVSrbG2Cg94Rutl7fAaKILS1w8ZDhGxdFOaw6EbCfHIxPy9vt/xwp5o0VQAx9aySPF6hU1A==}
     dependencies:
-      '@peculiar/asn1-schema': 2.1.0
+      '@peculiar/asn1-schema': 2.1.8
       '@peculiar/json-schema': 1.1.12
-      asn1js: 2.4.0
+      asn1js: 3.0.5
       pvtsutils: 1.3.2
       tslib: 2.4.0
     dev: false
