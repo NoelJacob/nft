@@ -10,6 +10,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/token-contract" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../web" vcs="Git" />
   </component>
 </project>
